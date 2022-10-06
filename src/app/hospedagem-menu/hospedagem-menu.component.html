@@ -1,0 +1,30 @@
+
+<app-menu-principal></app-menu-principal>
+
+<h2>Listagem de estadias</h2>
+<a href="./checkin/add">Novo Check-in</a><br>
+<a href="./hospedagem/todas">Todas</a> |
+<a href="./hospedagem/CHECKIN">Em aberto</a> |
+<a href="./hospedagem/CHECKOUT">Finalizadas</a>
+
+
+<table width="100%" border="1px">
+    <tr>
+        <td>#</td>
+        <td>Pessoa</td>
+        <td>Data entrada</td>
+        <td>Data saída</td>
+        <td>Garagem?</td>
+        <td>Valor total</td>
+        <td>Ações</td>
+    </tr>
+    <tr *ngFor="let c of lista">
+        <td>{{c.id}}</td> 
+        <td>{{c.detalhePessoa}}</td>
+        <td>{{c.dataHoraChecking}}</td>
+        <td>{{c.dataHoraCheckout}}</td>
+        <td>{{c.vagaGaragem}}</td>
+        <td>{{c.valorTotal}}</td>
+        <td><a href="./checkout/{{c.id}}">Check-out</a></td>
+    </tr>
+</table>

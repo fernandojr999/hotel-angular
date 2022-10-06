@@ -1,0 +1,22 @@
+<app-menu-principal></app-menu-principal>
+
+<h2>Realização de check-in</h2>
+
+<form method="POST" #frm="ngForm" (ngSubmit)="criar()">
+    <label for="idPessoa">Cliente: </label>
+    <select id="idPessoa" name="idPessoa" [(ngModel)]="checkin.idPessoa">
+        <option *ngFor="let p of pessoas" [value]="p.id">
+            {{p.id}} - {{p.nome}}
+        </option>
+    </select>
+    <br><br>
+    <label for="dataHoraChecking">Data/Hora: </label>
+    <input type="datetime-local" name="dataHoraCheckin" id="dataHoraCheckin" [(ngModel)]="checkin.dataHoraCheckin">
+    <br><br>
+    <label for="vagaGaragem">Garagem: </label>
+    <input type="checkbox" id="vagaGaragem" name="vagaGaragem" [(ngModel)]="checkin.vagaGaragem">
+    <br><br>
+    <button type="submit" [disabled]="frm.invalid">Salvar</button>
+</form>
+
+

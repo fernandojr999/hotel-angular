@@ -1,0 +1,14 @@
+<app-menu-principal></app-menu-principal>
+
+<h2>Realização de check-out da reserva: {{IDCheckin}}</h2>
+
+<form method="POST" #frm="ngForm" (ngSubmit)="checkout()">
+    <input hidden type="text" name="idCheckin" id="idCheckin" value="{{IDCheckin}}" [(ngModel)]="checkoutObj.idCheckin">
+
+    <label for="dataHoraCheckOut">Data/Hora: </label>
+    <input type="datetime-local" name="dataHoraCheckOut" id="dataHoraCheckOut" [(ngModel)]="checkoutObj.dataHoraCheckOut">
+    <br><br>
+    <button type="submit" [disabled]="frm.invalid">Salvar</button>
+</form>
+
+
